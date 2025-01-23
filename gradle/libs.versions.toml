@@ -1,18 +1,37 @@
 [versions]
-kotlin-version = "2.1.0"
-ktor-version = "3.0.3"
-logback-version = "1.4.14"
-junit-version = "5.9.3" # Add this line
+kotlin = "2.1.0"
+ktor = "3.0.3"
+logback = "1.4.14"
+junit = "5.9.3"
+mockk = "1.13.4"
+kotlinx-serialization = "1.5.0"
 
 [libraries]
-ktor-server-core = { module = "io.ktor:ktor-server-core-jvm", version.ref = "ktor-version" }
-ktor-server-netty = { module = "io.ktor:ktor-server-netty", version.ref = "ktor-version" }
-logback-classic = { module = "ch.qos.logback:logback-classic", version.ref = "logback-version" }
-ktor-server-config-yaml = { module = "io.ktor:ktor-server-config-yaml", version.ref = "ktor-version" }
-ktor-server-test-host = { module = "io.ktor:ktor-server-test-host", version.ref = "ktor-version" }
-kotlin-test-junit = { module = "org.jetbrains.kotlin:kotlin-test-junit", version.ref = "kotlin-version" }
-junit = { module = "org.junit.jupiter:junit-jupiter", version.ref = "junit-version" } # Add this line
+# Ktor Server Libraries
+ktor-server-core = { module = "io.ktor:ktor-server-core-jvm", version.ref = "ktor" }
+ktor-server-netty = { module = "io.ktor:ktor-server-netty", version.ref = "ktor" }
+ktor-server-config-yaml = { module = "io.ktor:ktor-server-config-yaml", version.ref = "ktor" }
+ktor-server-content-negotiation = { module = "io.ktor:ktor-server-content-negotiation", version.ref = "ktor" }
+
+# Ktor Client Libraries
+ktor-client-core = { module = "io.ktor:ktor-client-core", version.ref = "ktor" }
+ktor-client-cio = { module = "io.ktor:ktor-client-cio", version.ref = "ktor" }
+ktor-client-content-negotiation = { module = "io.ktor:ktor-client-content-negotiation", version.ref = "ktor" }
+ktor-serialization-kotlinx-json = { module = "io.ktor:ktor-serialization-kotlinx-json", version.ref = "ktor" }
+
+# Serialization
+kotlinx-serialization-json = { module = "org.jetbrains.kotlinx:kotlinx-serialization-json", version.ref = "kotlinx-serialization" }
+
+# Logging
+logback-classic = { module = "ch.qos.logback:logback-classic", version.ref = "logback" }
+
+# Testing Libraries
+ktor-server-test-host = { module = "io.ktor:ktor-server-test-host", version.ref = "ktor" }
+kotlin-test-junit = { module = "org.jetbrains.kotlin:kotlin-test-junit", version.ref = "kotlin" }
+junit-jupiter = { module = "org.junit.jupiter:junit-jupiter", version.ref = "junit" }
+mockk = { module = "io.mockk:mockk", version.ref = "mockk" }
 
 [plugins]
-kotlin-jvm = { id = "org.jetbrains.kotlin.jvm", version.ref = "kotlin-version" }
-ktor = { id = "io.ktor.plugin", version.ref = "ktor-version" }
+kotlin-jvm = { id = "org.jetbrains.kotlin.jvm", version.ref = "kotlin" }
+ktor = { id = "io.ktor.plugin", version.ref = "ktor" }
+kotlinx-serialization = { id = "org.jetbrains.kotlin.plugin.serialization", version.ref = "kotlin" }
