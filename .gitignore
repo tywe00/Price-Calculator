@@ -21,3 +21,11 @@ gradle-app.setting
 .classpath
 
 .idea
+
+.clj-kondo
+
+.kotlin
+
+.lsp
+
+.vscode
