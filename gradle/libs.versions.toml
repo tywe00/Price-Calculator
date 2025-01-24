@@ -2,8 +2,8 @@
 kotlin = "2.1.0"
 ktor = "3.0.3"
 logback = "1.4.14"
-junit = "5.9.3"
-mockk = "1.13.4"
+junit = "5.9.2"
+mockk = "1.13.16"
 kotlinx-serialization = "1.5.0"
 
 [libraries]
