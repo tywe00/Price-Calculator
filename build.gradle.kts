@@ -39,9 +39,10 @@ dependencies {
 
     // Testing Dependencies
     testImplementation(libs.ktor.server.test.host)
-    testImplementation(libs.kotlin.test.junit)
-    testImplementation(libs.junit.jupiter)
+    testImplementation(libs.junit.jupiter)           // Use junit-jupiter
+    testImplementation(libs.kotlin.test.junit5)      // Use kotlin-test-junit5
     testImplementation(libs.mockk)
+    testImplementation(libs.ktor.client.mock)
 }
 
 tasks.test {

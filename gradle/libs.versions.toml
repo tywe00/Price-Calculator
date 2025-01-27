@@ -2,7 +2,7 @@
 kotlin = "2.1.0"
 ktor = "3.0.3"
 logback = "1.4.14"
-junit = "5.9.2"
+junit = "5.9.3"
 mockk = "1.13.16"
 kotlinx-serialization = "1.5.0"
 
@@ -18,6 +18,7 @@ ktor-client-core = { module = "io.ktor:ktor-client-core", version.ref = "ktor" }
 ktor-client-cio = { module = "io.ktor:ktor-client-cio", version.ref = "ktor" }
 ktor-client-content-negotiation = { module = "io.ktor:ktor-client-content-negotiation", version.ref = "ktor" }
 ktor-serialization-kotlinx-json = { module = "io.ktor:ktor-serialization-kotlinx-json", version.ref = "ktor" }
+ktor-client-mock = { module = "io.ktor:ktor-client-mock", version.ref = "ktor" }
 
 # Serialization
 kotlinx-serialization-json = { module = "org.jetbrains.kotlinx:kotlinx-serialization-json", version.ref = "kotlinx-serialization" }
@@ -27,8 +28,8 @@ logback-classic = { module = "ch.qos.logback:logback-classic", version.ref = "lo
 
 # Testing Libraries
 ktor-server-test-host = { module = "io.ktor:ktor-server-test-host", version.ref = "ktor" }
-kotlin-test-junit = { module = "org.jetbrains.kotlin:kotlin-test-junit", version.ref = "kotlin" }
-junit-jupiter = { module = "org.junit.jupiter:junit-jupiter", version.ref = "junit" }
+junit-jupiter = { module = "org.junit.jupiter:junit-jupiter", version.ref = "junit" }  # Single JUnit dependency
+kotlin-test-junit5 = { module = "org.jetbrains.kotlin:kotlin-test-junit5", version.ref = "kotlin" }  # Added kotlin-test-junit5
 mockk = { module = "io.mockk:mockk", version.ref = "mockk" }
 
 [plugins]
