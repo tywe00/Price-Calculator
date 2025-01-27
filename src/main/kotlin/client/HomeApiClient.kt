@@ -4,23 +4,26 @@ import com.example.models.*
 import io.ktor.client.*
 import io.ktor.client.call.*
 import io.ktor.client.request.*
-import kotlinx.serialization.json.Json
 
-class HomeApiClient(private val httpClient: HttpClient) {
+/**
+ * Concrete implementation of [IHomeApiClient], fetching venue data
+ * from Wolt's Home Assignment API via Ktor.
+ */
+class HomeApiClient(
+    private val httpClient: HttpClient
+) : IHomeApiClient {
+
     private val baseUrl = "https://consumer-api.development.dev.woltapi.com/home-assignment-api/v1/venues"
 
-    // Fetch venue static data
-    suspend fun getVenueStatic(venueSlug: String): VenueStaticResponse {
+    override suspend fun getVenueStatic(venueSlug: String): VenueStaticResponse {
         return httpClient.get("$baseUrl/$venueSlug/static").body()
     }
 
-    // Fetch venue dynamic data
-    suspend fun getVenueDynamic(venueSlug: String): VenueDynamicResponse {
+    override suspend fun getVenueDynamic(venueSlug: String): VenueDynamicResponse {
         return httpClient.get("$baseUrl/$venueSlug/dynamic").body()
     }
 
-    // Get coordinates from the venue static data
-    suspend fun fetchVenueCoordinates(venueSlug: String): Coordinates? {
+    override suspend fun fetchVenueCoordinates(venueSlug: String): Coordinates? {
         return try {
             val venueStatic = getVenueStatic(venueSlug)
             val coordinates = venueStatic.venueRaw.location.coordinates
@@ -36,8 +39,7 @@ class HomeApiClient(private val httpClient: HttpClient) {
         }
     }
 
-    // Fetch delivery specifications such as min order, base price, distance ranges
-    suspend fun fetchDeliverySpecs(venueSlug: String): DeliverySpecs? {
+    override suspend fun fetchDeliverySpecs(venueSlug: String): DeliverySpecs? {
         return try {
             val venueDynamic = getVenueDynamic(venueSlug)
             venueDynamic.venueRaw.deliverySpecs
