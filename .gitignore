@@ -29,3 +29,5 @@ gradle-app.setting
 .lsp
 
 .vscode
+
+bin/
