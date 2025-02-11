@@ -1,8 +1,8 @@
-# Delivery Order Price Calculator (DOPC) Service
+# Price Calculator Service
 
 ## Overview
 
-The Delivery Order Price Calculator (DOPC) is a backend service designed to calculate the total price and price breakdown for delivery orders. This service integrates with the Home Assignment API to fetch venue-related data and provides a comprehensive pricing mechanism for delivery orders.
+The Price Calculator is a backend service designed to calculate the total price and price breakdown for delivery orders. This service integrates with the Home Assignment API to fetch venue-related data and provides a comprehensive pricing mechanism for delivery orders.
 
 ## Key Features
 
